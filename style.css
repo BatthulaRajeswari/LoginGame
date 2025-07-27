@@ -1,0 +1,140 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('WhatsApp Image 2025-07-26 at 10.50.33 AM.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 40px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(223, 178, 230, 0.473);
+  z-index: -1;
+}
+
+.container {
+  background-color: hsl(324, 14%, 93%);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  z-index: 2;
+  margin-top: 80px;
+}
+
+.step {
+  display: none;
+  flex-direction: column;
+}
+
+.step.active {
+  display: flex;
+}
+
+input, select, button {
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+button {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #483d8b;
+}
+
+.progress {
+  height: 10px;
+  background: #ddd;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #6a5acd;
+  transition: width 0.3s ease-in-out;
+}
+
+#game, #result {
+  display: none;
+  margin-top: 30px;
+}
+
+/* Scale + Markers */
+.scale-wrapper {
+  position: fixed;
+  top: 80px;
+  right: 30px;
+  width: 600px;
+  z-index: 10;
+}
+
+.scale-track {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  background-color: #999;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  box-shadow: inset 0 0 8px #00000055;
+}
+
+.marker {
+  position: absolute;
+  top: 30px;
+  width: 150px;
+  height: 150px;
+  transform: translateX(-50%);
+  transition: left 0.4s ease;
+  pointer-events: none;
+}
+
+.bubu {
+  filter: drop-shadow(0 0 10px navy);
+}
+
+.dudu {
+  filter: drop-shadow(0 0 10px crimson);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .scale-wrapper {
+    width: 90vw;
+  }
+
+  .marker {
+    width: 100px;
+    height: 100px;
+  }
+
+  .container {
+    width: 95%;
+  }
+}

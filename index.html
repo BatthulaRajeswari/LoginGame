@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Details + Guessing Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>👋 Match your vibe with computer</h2>
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+    <form id="multiStepForm" onsubmit="return false;">
+      <div class="step active">
+        <label>👤 What's your name?</label>
+        <input type="text" name="name" required />
+      </div>
+      <div class="step">
+        <label>📧 What's your email?</label>
+        <input type="email" name="email" required />
+      </div>
+      <div class="step">
+        <label>🦸‍♂️ Who's your favorite subject?</label>
+        <input type="text" name="subject" required />
+      </div>
+      <div class="step">
+        <label>📱 Contact number</label>
+        <input type="tel" name="phone" required />
+      </div>
+      <div class="step">
+        <label for="gender">🚻 Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">--Select--</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="step">
+        <label for="dob">📅 Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+      </div>
+      <div class="step">
+        <label>🏫 What's your college name?</label>
+        <input type="text" name="college" required />
+      </div>
+      <button type="button" id="nextBtn">Next ➡️</button>
+    </form>
+
+    <div id="result">
+      <h3>🎉 Thanks for the details!</h3>
+      <p>Ready for a quick game?</p>
+      <button onclick="startGame()">🎮 Start Number Game</button>
+    </div>
+
+    <div id="game">
+      <h3>🎲 Guess the number (1–100)</h3>
+      <input type="number" id="guessInput" min="1" max="100" />
+      <button onclick="checkGuess()">Submit</button>
+      <p id="gameMsg"></p>
+      <p>📊 Attempts used: <strong id="attemptCount">0</strong></p>
+      <button onclick="restartGame()">🔁 Play Again</button>
+    </div>
+  </div>
+
+  <!-- Horizontal Scale with Characters -->
+  <div class="scale-wrapper" id="scaleWrapper" style="display:none;">
+    <div class="scale-track" id="scaleTrack"></div>
+    <img src="WhatsApp Image 2025-07-26 at 9.45.43 AM.jpeg" alt="Bubu" class="marker bubu" id="bubuMarker" />
+    <img src="WhatsApp Image 2025-07-26 at 9.52.50 AM.jpeg" alt="Dudu" class="marker dudu" id="duduMarker" />
+    <img src="WhatsApp Image 2025-07-26 at 11.36.02 AM.jpeg" alt="Congrats" class="marker dudu" id="congratsImage" style="display:none;" />
+  </div>
+
+  <!-- Success Sound -->
+  <audio id="successSound" src="congrats.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
